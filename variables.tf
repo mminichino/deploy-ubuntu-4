@@ -12,6 +12,10 @@ variable "gcp_project" {
   description = "AWS region"
 }
 
+variable "gcp_credentials" {
+  description = "AWS region"
+}
+
 variable "environment_name" {
   description = "Environment name"
 }
