@@ -195,14 +195,14 @@ resource "google_compute_disk" "data_disk" {
   name         = "${each.key}-data"
   type         = each.value.gcp_disk_type
   size         = each.value.data_volume_size
-  zone         = "${var.gcp_region}-c"
+  zone         = "${var.gcp_region}-a"
 }
 
 resource "google_compute_instance" "ubuntu" {
   for_each     = var.environment_spec
   name         = "${var.environment_name}-${each.key}"
   machine_type = each.value.gcp_machine_type
-  zone         = "${var.gcp_region}-c"
+  zone         = "${var.gcp_region}-a"
   project      = var.gcp_project
   depends_on = [google_compute_subnetwork.gcp_subnet, google_compute_disk.data_disk]
 
