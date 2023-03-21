@@ -226,10 +226,7 @@ resource "google_compute_instance" "ubuntu" {
   network_interface {
     subnetwork = google_compute_subnetwork.gcp_subnet.name
     subnetwork_project = var.gcp_project
-    dynamic "access_config" {
-      for_each = ["pub-ip"]
-      content {}
-    }
+    access_config {}
   }
 
   metadata = {
