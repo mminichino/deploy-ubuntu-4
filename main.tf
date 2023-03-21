@@ -7,7 +7,6 @@ provider "aws" {
 provider "google" {
   project = var.gcp_project
   region  = var.gcp_region
-  zone    = "${var.gcp_region}-a"
 }
 
 data "aws_ami" "ubuntu" {
