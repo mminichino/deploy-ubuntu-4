@@ -38,7 +38,7 @@ variable "environment_spec" {
     node-01 = {
       node_number     = 1,
       instance_type   = "t2.micro",
-      gcp_machine_type = "e2‑medium",
+      gcp_machine_type = "e2-micro",
       root_volume_iops = "3000",
       root_volume_size = "50",
       root_volume_type = "gp3",
@@ -50,7 +50,7 @@ variable "environment_spec" {
     node-02 = {
       node_number     = 2,
       instance_type   = "t2.micro",
-      gcp_machine_type = "e2‑medium",
+      gcp_machine_type = "e2-micro",
       root_volume_iops = "3000",
       root_volume_size = "50",
       root_volume_type = "gp3",
@@ -62,7 +62,7 @@ variable "environment_spec" {
     node-03 = {
       node_number     = 3,
       instance_type   = "t2.micro",
-      gcp_machine_type = "e2‑medium",
+      gcp_machine_type = "e2-micro",
       root_volume_iops = "3000",
       root_volume_size = "50",
       root_volume_type = "gp3",
