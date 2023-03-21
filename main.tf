@@ -204,6 +204,7 @@ resource "google_compute_instance" "ubuntu" {
   machine_type = each.value.gcp_machine_type
   zone         = "${var.gcp_region}-c"
   project      = var.gcp_project
+  depends_on = [google_compute_subnetwork.gcp_subnet, google_compute_disk.data_disk]
 
   boot_disk {
     initialize_params {
