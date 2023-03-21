@@ -195,13 +195,7 @@ resource "google_compute_disk" "data_disk" {
   name         = "${each.key}-data"
   type         = each.value.gcp_disk_type
   size         = each.value.data_volume_size
-  project      = var.gcp_project
   zone         = "${var.gcp_region}-a"
-}
-
-resource "google_service_account" "instance_sa" {
-  account_id   = "${var.environment_name}-sa"
-  display_name = "Service Account"
 }
 
 resource "google_compute_instance" "ubuntu" {
@@ -234,7 +228,7 @@ resource "google_compute_instance" "ubuntu" {
   }
 
   service_account {
-    email = google_service_account.instance_sa.email
+    email = var.gcp_service_account_email
     scopes = ["cloud-platform"]
   }
 }

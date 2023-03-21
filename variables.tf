@@ -16,6 +16,10 @@ variable "gcp_credentials" {
   description = "AWS region"
 }
 
+variable "gcp_service_account_email" {
+  description = "The service account email"
+}
+
 variable "environment_name" {
   description = "Environment name"
 }
