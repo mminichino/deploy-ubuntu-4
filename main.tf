@@ -8,7 +8,6 @@ provider "google" {
   project = var.gcp_project
   region  = var.gcp_region
   zone    = "${var.gcp_region}-c"
-  credentials = var.gcp_credentials
 }
 
 data "aws_ami" "ubuntu" {
